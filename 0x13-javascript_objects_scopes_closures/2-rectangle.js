@@ -1,8 +1,13 @@
 #!/usr/bin/node
 class Rectangle {
-  container (w, h) {
-    this.width = w;
-    this.height = h;
+    constructor(w, h) {
+        if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
+            // If w or h is not a positive integer, return an empty object
+            return {}; 
+        }
+        this.width = w;
+        this.height = h;
+    }
 }
-}
+
 
