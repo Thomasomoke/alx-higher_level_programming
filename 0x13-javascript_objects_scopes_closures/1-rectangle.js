@@ -6,5 +6,3 @@ class Rectangle {
     }
 }
 
-let rect = new Rectangle(this.width, this.height);
-
