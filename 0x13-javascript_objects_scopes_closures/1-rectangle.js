@@ -1,8 +1,10 @@
 #!/usr/bin/node
 class Rectangle {
     constructor(w, h) {
-        this.w = width;
-        this.h = height;
+        this.width = w;
+        this.height = h;
     }
 }
+
+let rect = new Rectangle(this.width, this.height);
 
