@@ -1,12 +1,23 @@
 #!/usr/bin/node
-const arg = process.argv[2]; // Get the first argument passed to the script
-const num = parseInt(arg); // Attempt to convert the argument to an integer
+#!/usr/bin/env node
 
-if (isNaN(num)) {
-    console.log("Missing number of occurrences");
+// Retrieve the first argument
+const sizeArg = process.argv[2];
+
+// Check if the argument is a number
+const size = parseInt(sizeArg, 10);
+
+// If the argument is not a valid number, print "Missing size"
+if (isNaN(size)) {
+    console.log("Missing size");
 } else {
-    for (let i = 0; i < num; i++) {
-        console.log("C is fun");
+    // Loop to print the square of X's
+    for (let i = 0; i < size; i++) {
+        let line = '';
+        for (let j = 0; j < size; j++) {
+            line += 'X';
+        }
+        console.log(line);
     }
 }
 
