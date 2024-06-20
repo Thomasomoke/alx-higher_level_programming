@@ -7,4 +7,3 @@ if __name__ == "__main__":
     for i in range(0, length):
         if file[i][0:2] != "__":
             print(file[i])
-
