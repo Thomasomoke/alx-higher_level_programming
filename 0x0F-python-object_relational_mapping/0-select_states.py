@@ -1,25 +1,30 @@
- #!/usr/bin/python3
- """
-0-select_states.py module
-
-This script connects to a MySQL database and retrieves all rows from
-the 'states' table. It takes three command-line arguments: the MySQL
-username, password, and database name.
-
-Usage:
-    ./0-select_states.py <mysql_username> <mysql_password> <database_name>
-"""
- import MySQLdb
- import sys
+#!/usr/bin/python3
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
-  db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    # Get the command line arguments
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    db_name = sys.argv[3]
 
-  c = db.cursor()
-  c.execute("SELECT * FROM states")
-  rows = c.fetcha11()
-  for row in rows:
-    print(row)
-    c.close()
+    # Connect to the MySQL server
+    db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username, passwd=mysql_password, db=db_name)
+    
+    # Create a cursor object
+    cursor = db.cursor()
+
+    # Execute the SQL query to get all states
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+
+    # Fetch all the rows
+    rows = cursor.fetchall()
+
+    # Print the rows
+    for row in rows:
+        print(row)
+
+    # Close the cursor and the connection
+    cursor.close()
     db.close()
 
