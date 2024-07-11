@@ -1,2 +1,4 @@
-#Write a script that lists all databases of your MySQL server.
+#Write a script that lists  databases
+#print the databases
 SHOW databases;
+
